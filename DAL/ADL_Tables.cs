@@ -74,5 +74,8 @@ namespace DAL
             return SqlHelp.Update(sql, new SqlParameter("id", id)) > 0;
         }
 
+        //
+
+
     }
 }
