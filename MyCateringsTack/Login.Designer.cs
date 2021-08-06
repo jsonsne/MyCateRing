@@ -1,7 +1,7 @@
 ﻿
 namespace MyCateringsTack
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -29,7 +29,7 @@ namespace MyCateringsTack
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.uiTextBox2 = new Sunny.UI.UITextBox();
@@ -44,7 +44,7 @@ namespace MyCateringsTack
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(244, 360);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -63,7 +63,7 @@ namespace MyCateringsTack
             this.uiTextBox1.Name = "uiTextBox1";
             this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox1.Size = new System.Drawing.Size(235, 29);
-            this.uiTextBox1.TabIndex = 1;
+            this.uiTextBox1.TabIndex = 0;
             this.uiTextBox1.Watermark = "请输入账户";
             // 
             // uiTextBox2
@@ -77,6 +77,7 @@ namespace MyCateringsTack
             this.uiTextBox2.Minimum = -2147483648D;
             this.uiTextBox2.Name = "uiTextBox2";
             this.uiTextBox2.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox2.PasswordChar = '*';
             this.uiTextBox2.Size = new System.Drawing.Size(235, 29);
             this.uiTextBox2.TabIndex = 1;
             this.uiTextBox2.Watermark = "请输入密码";
@@ -102,12 +103,14 @@ namespace MyCateringsTack
             // uiButton1
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiButton1.Location = new System.Drawing.Point(331, 293);
             this.uiButton1.Name = "uiButton1";
             this.uiButton1.Size = new System.Drawing.Size(100, 35);
             this.uiButton1.TabIndex = 3;
             this.uiButton1.Text = "取消";
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // uiButton2
             // 
@@ -118,6 +121,7 @@ namespace MyCateringsTack
             this.uiButton2.Size = new System.Drawing.Size(100, 35);
             this.uiButton2.TabIndex = 3;
             this.uiButton2.Text = "登录";
+            this.uiButton2.Click += new System.EventHandler(this.uiButton2_Click);
             // 
             // label3
             // 
@@ -129,10 +133,12 @@ namespace MyCateringsTack
             this.label3.TabIndex = 2;
             this.label3.Text = "CateRing";
             // 
-            // Form1
+            // Login
             // 
+            this.AcceptButton = this.uiButton2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.uiButton1;
             this.ClientSize = new System.Drawing.Size(588, 393);
             this.Controls.Add(this.uiButton2);
             this.Controls.Add(this.uiButton1);
@@ -144,7 +150,7 @@ namespace MyCateringsTack
             this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

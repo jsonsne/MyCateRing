@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="AdUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomType.cs" />
+    <Compile Include="TableEnum.cs" />
+    <Compile Include="Tables.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

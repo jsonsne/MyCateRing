@@ -48,16 +48,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CateBillFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CateBillFrm.Designer.cs">
+      <DependentUpon>CateBillFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConSumFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConSumFrm.Designer.cs">
+      <DependentUpon>ConSumFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultFrm.Designer.cs">
+      <DependentUpon>DefaultFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductFrm.Designer.cs">
+      <DependentUpon>ProductFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RoomTableFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomTableFrm.Designer.cs">
+      <DependentUpon>RoomTableFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemFrm.Designer.cs">
+      <DependentUpon>SystemFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VipFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VipFrm.Designer.cs">
+      <DependentUpon>VipFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CateBillFrm.resx">
+      <DependentUpon>CateBillFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConSumFrm.resx">
+      <DependentUpon>ConSumFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultFrm.resx">
+      <DependentUpon>DefaultFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductFrm.resx">
+      <DependentUpon>ProductFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +131,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RoomTableFrm.resx">
+      <DependentUpon>RoomTableFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemFrm.resx">
+      <DependentUpon>SystemFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VipFrm.resx">
+      <DependentUpon>VipFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
