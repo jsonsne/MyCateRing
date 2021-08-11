@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADL_RoomType.cs" />
-    <Compile Include="ADL_Tables.cs" />
+    <Compile Include="DAL_Products.cs" />
+    <Compile Include="DAL_ProductTypes.cs" />
+    <Compile Include="DAL_RoomType.cs" />
+    <Compile Include="DAL_Tables.cs" />
+    <Compile Include="DAL_VipCosts.cs" />
+    <Compile Include="DAL_VipUsers.cs" />
     <Compile Include="Core\SqlHelp.cs" />
     <Compile Include="DAL_AdUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

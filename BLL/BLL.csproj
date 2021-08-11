@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL_AdUsers.cs" />
+    <Compile Include="BLL_Products.cs" />
+    <Compile Include="BLL_ProductTypes.cs" />
     <Compile Include="BLL_RoomType.cs" />
     <Compile Include="BLL_Tables.cs" />
+    <Compile Include="BLL_VipCosts.cs" />
+    <Compile Include="BLL_VipUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

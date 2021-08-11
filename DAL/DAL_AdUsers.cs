@@ -31,7 +31,7 @@ namespace DAL
         {
             if (us.Id == 0)
             {
-                string sql = "inset into AdUsers(name,usCode,usPwd) values(@name,@usCode,@usPwd)";
+                string sql = "insert into AdUsers(name,usCode,usPwd) values(@name,@usCode,@usPwd)";
                 return SqlHelp.Update(sql, new SqlParameter("name", us.Name), new SqlParameter("usCode", us.UsCode), new SqlParameter("usPwd", us.UsPwd)) > 0;
             }
             else
@@ -51,6 +51,8 @@ namespace DAL
             string sql = "delete AdUsers where id=@id";
             return SqlHelp.Update(sql, new SqlParameter("id", id)) > 0;
         }
+
+
 
         /// <summary>
         /// 查询

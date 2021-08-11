@@ -48,6 +48,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProductInfoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProductInfoFrm.Designer.cs">
+      <DependentUpon>AddProductInfoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProductType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProductType.Designer.cs">
+      <DependentUpon>AddProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRommType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRommType.Designer.cs">
+      <DependentUpon>AddRommType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSysUsersFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSysUsersFrm.Designer.cs">
+      <DependentUpon>AddSysUsersFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVipCostFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVipCostFrm.Designer.cs">
+      <DependentUpon>AddVipCostFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVipFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVipFrm.Designer.cs">
+      <DependentUpon>AddVipFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CateBillFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +114,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PiAddTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PiAddTables.Designer.cs">
+      <DependentUpon>PiAddTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,12 +140,42 @@
     <Compile Include="SystemFrm.Designer.cs">
       <DependentUpon>SystemFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateTable.Designer.cs">
+      <DependentUpon>UpdateTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="VipFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VipFrm.Designer.cs">
       <DependentUpon>VipFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VipUserFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VipUserFrm.Designer.cs">
+      <DependentUpon>VipUserFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddProductInfoFrm.resx">
+      <DependentUpon>AddProductInfoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProductType.resx">
+      <DependentUpon>AddProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRommType.resx">
+      <DependentUpon>AddRommType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSysUsersFrm.resx">
+      <DependentUpon>AddSysUsersFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVipCostFrm.resx">
+      <DependentUpon>AddVipCostFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVipFrm.resx">
+      <DependentUpon>AddVipFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CateBillFrm.resx">
       <DependentUpon>CateBillFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PiAddTables.resx">
+      <DependentUpon>PiAddTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductFrm.resx">
       <DependentUpon>ProductFrm.cs</DependentUpon>
@@ -137,8 +212,14 @@
     <EmbeddedResource Include="SystemFrm.resx">
       <DependentUpon>SystemFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateTable.resx">
+      <DependentUpon>UpdateTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VipFrm.resx">
       <DependentUpon>VipFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VipUserFrm.resx">
+      <DependentUpon>VipUserFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

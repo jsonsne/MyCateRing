@@ -9,11 +9,11 @@ namespace BLL
 {
     public class BLL_Tables
     {
-        private ADL_Tables tb;
+        private DAL_Tables tb;
 
         public BLL_Tables()
         {
-            tb = new ADL_Tables();
+            tb = new DAL_Tables();
         }
 
         /// <summary>
@@ -36,5 +36,22 @@ namespace BLL
         /// <param name="id"></param>
         /// <returns></returns>
         public bool DeleteTableNuM(int id) => tb.DeleteTable(id);
+
+        /// <summary>
+        /// 显示所有的房间餐桌
+        /// </summary>
+        /// <returns></returns>
+        public List<TempTableRomm> GetRommTypes(string str) => tb.GetRommTypes(str);
+
+        /// <summary>
+        /// 获取餐桌的状态
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string GetTableState(int id) => tb.GetTableState(id);
+
+        //根据餐桌Id获取具体的信息
+        public Tables GetTable(int id) => tb.GetTable(id);
+
     }
 }

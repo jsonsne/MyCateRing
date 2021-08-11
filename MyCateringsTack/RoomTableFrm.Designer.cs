@@ -38,6 +38,12 @@ namespace MyCateringsTack
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.uiDataGridView1 = new Sunny.UI.UIDataGridView();
+            this.rid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minConst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isZheKou = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.maxRenshu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.uiButton2 = new Sunny.UI.UIButton();
@@ -47,20 +53,16 @@ namespace MyCateringsTack
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.uiDataGridView2 = new Sunny.UI.UIDataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.uiButton7 = new Sunny.UI.UIButton();
             this.uiButton4 = new Sunny.UI.UIButton();
             this.uiButton5 = new Sunny.UI.UIButton();
             this.uiButton6 = new Sunny.UI.UIButton();
-            this.uiButton7 = new Sunny.UI.UIButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PagePanel.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -128,12 +130,12 @@ namespace MyCateringsTack
             this.uiDataGridView1.ColumnHeadersHeight = 32;
             this.uiDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.uiDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewComboBoxColumn2,
-            this.dataGridViewTextBoxColumn6,
-            this.Column1});
+            this.rid,
+            this.name,
+            this.minConst,
+            this.isZheKou,
+            this.maxRenshu,
+            this.area});
             this.uiDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -152,6 +154,51 @@ namespace MyCateringsTack
             this.uiDataGridView1.Style = Sunny.UI.UIStyle.Custom;
             this.uiDataGridView1.StyleCustomMode = true;
             this.uiDataGridView1.TabIndex = 1;
+            // 
+            // rid
+            // 
+            this.rid.DataPropertyName = "id";
+            this.rid.HeaderText = "Id";
+            this.rid.Name = "rid";
+            this.rid.ReadOnly = true;
+            this.rid.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "房间类型";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // minConst
+            // 
+            this.minConst.DataPropertyName = "minConst";
+            this.minConst.HeaderText = "最低消费";
+            this.minConst.Name = "minConst";
+            this.minConst.ReadOnly = true;
+            // 
+            // isZheKou
+            // 
+            this.isZheKou.DataPropertyName = "isZheKou";
+            this.isZheKou.HeaderText = "是否开启折扣";
+            this.isZheKou.Name = "isZheKou";
+            this.isZheKou.ReadOnly = true;
+            this.isZheKou.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.isZheKou.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // maxRenshu
+            // 
+            this.maxRenshu.DataPropertyName = "maxRenshu";
+            this.maxRenshu.HeaderText = "容纳人数";
+            this.maxRenshu.Name = "maxRenshu";
+            this.maxRenshu.ReadOnly = true;
+            // 
+            // area
+            // 
+            this.area.DataPropertyName = "area";
+            this.area.HeaderText = "区域";
+            this.area.Name = "area";
+            this.area.ReadOnly = true;
             // 
             // panel1
             // 
@@ -172,6 +219,7 @@ namespace MyCateringsTack
             this.uiButton1.Size = new System.Drawing.Size(134, 35);
             this.uiButton1.TabIndex = 1;
             this.uiButton1.Text = "修改房间类型";
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // uiButton2
             // 
@@ -182,6 +230,7 @@ namespace MyCateringsTack
             this.uiButton2.Size = new System.Drawing.Size(134, 35);
             this.uiButton2.TabIndex = 2;
             this.uiButton2.Text = "删除房间类型";
+            this.uiButton2.Click += new System.EventHandler(this.uiButton2_Click);
             // 
             // uiButton3
             // 
@@ -192,6 +241,7 @@ namespace MyCateringsTack
             this.uiButton3.Size = new System.Drawing.Size(134, 35);
             this.uiButton3.TabIndex = 3;
             this.uiButton3.Text = "添加房间类型";
+            this.uiButton3.Click += new System.EventHandler(this.uiButton3_Click);
             // 
             // uiGroupBox2
             // 
@@ -212,6 +262,8 @@ namespace MyCateringsTack
             // 
             this.uiComboBox1.FillColor = System.Drawing.Color.White;
             this.uiComboBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiComboBox1.Items.AddRange(new object[] {
+            "全部"});
             this.uiComboBox1.Location = new System.Drawing.Point(147, 30);
             this.uiComboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiComboBox1.MinimumSize = new System.Drawing.Size(63, 0);
@@ -269,9 +321,11 @@ namespace MyCateringsTack
             this.uiDataGridView2.ColumnHeadersHeight = 32;
             this.uiDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.uiDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewComboBoxColumn1});
+            this.id,
+            this.rname,
+            this.tName,
+            this.state,
+            this.rtId});
             this.uiDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiDataGridView2.EnableHeadersVisualStyles = false;
             this.uiDataGridView2.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -291,6 +345,44 @@ namespace MyCateringsTack
             this.uiDataGridView2.StyleCustomMode = true;
             this.uiDataGridView2.TabIndex = 1;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // rname
+            // 
+            this.rname.DataPropertyName = "Rname";
+            this.rname.HeaderText = "餐桌名称";
+            this.rname.Name = "rname";
+            this.rname.ReadOnly = true;
+            // 
+            // tName
+            // 
+            this.tName.DataPropertyName = "tName";
+            this.tName.HeaderText = "房间类型";
+            this.tName.Name = "tName";
+            this.tName.ReadOnly = true;
+            // 
+            // state
+            // 
+            this.state.DataPropertyName = "state";
+            this.state.HeaderText = "餐桌状态";
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            this.state.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // rtId
+            // 
+            this.rtId.DataPropertyName = "Rid";
+            this.rtId.HeaderText = "Rid";
+            this.rtId.Name = "rtId";
+            this.rtId.ReadOnly = true;
+            this.rtId.Visible = false;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.uiButton7);
@@ -302,6 +394,17 @@ namespace MyCateringsTack
             this.panel3.Size = new System.Drawing.Size(160, 215);
             this.panel3.TabIndex = 2;
             // 
+            // uiButton7
+            // 
+            this.uiButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton7.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiButton7.Location = new System.Drawing.Point(17, 177);
+            this.uiButton7.Name = "uiButton7";
+            this.uiButton7.Size = new System.Drawing.Size(134, 35);
+            this.uiButton7.TabIndex = 1;
+            this.uiButton7.Text = "批量添加餐桌";
+            this.uiButton7.Click += new System.EventHandler(this.uiButton7_Click);
+            // 
             // uiButton4
             // 
             this.uiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -311,6 +414,7 @@ namespace MyCateringsTack
             this.uiButton4.Size = new System.Drawing.Size(134, 35);
             this.uiButton4.TabIndex = 1;
             this.uiButton4.Text = "修改餐桌";
+            this.uiButton4.Click += new System.EventHandler(this.uiButton4_Click);
             // 
             // uiButton5
             // 
@@ -321,6 +425,7 @@ namespace MyCateringsTack
             this.uiButton5.Size = new System.Drawing.Size(134, 35);
             this.uiButton5.TabIndex = 2;
             this.uiButton5.Text = "删除餐桌";
+            this.uiButton5.Click += new System.EventHandler(this.uiButton5_Click);
             // 
             // uiButton6
             // 
@@ -331,80 +436,7 @@ namespace MyCateringsTack
             this.uiButton6.Size = new System.Drawing.Size(134, 35);
             this.uiButton6.TabIndex = 3;
             this.uiButton6.Text = "添加餐桌";
-            // 
-            // uiButton7
-            // 
-            this.uiButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton7.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton7.Location = new System.Drawing.Point(17, 177);
-            this.uiButton7.Name = "uiButton7";
-            this.uiButton7.Size = new System.Drawing.Size(134, 35);
-            this.uiButton7.TabIndex = 1;
-            this.uiButton7.Text = "批量添加餐桌";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "餐桌名称";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "房间类型";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.HeaderText = "餐桌状态";
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.ReadOnly = true;
-            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "id";
-            this.Column2.HeaderText = "Id";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "房间类型";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "minConst";
-            this.dataGridViewTextBoxColumn5.HeaderText = "最低消费";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewComboBoxColumn2
-            // 
-            this.dataGridViewComboBoxColumn2.DataPropertyName = "isZheKou";
-            this.dataGridViewComboBoxColumn2.HeaderText = "是否开启折扣";
-            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
-            this.dataGridViewComboBoxColumn2.ReadOnly = true;
-            this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "maxRenshu";
-            this.dataGridViewTextBoxColumn6.HeaderText = "容纳人数";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "area";
-            this.Column1.HeaderText = "区域";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.uiButton6.Click += new System.EventHandler(this.uiButton6_Click);
             // 
             // RoomTableFrm
             // 
@@ -448,14 +480,16 @@ namespace MyCateringsTack
         private Sunny.UI.UIComboBox uiComboBox1;
         private System.Windows.Forms.Label label1;
         private Sunny.UI.UIButton uiButton7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewComboBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minConst;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isZheKou;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxRenshu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn state;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rtId;
     }
 }

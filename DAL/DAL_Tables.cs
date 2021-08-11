@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ADL_Tables
+    public class DAL_Tables
     {
         /// <summary>
         /// 根据房间类型Id获取房间内所有的餐桌
@@ -74,8 +74,55 @@ namespace DAL
             return SqlHelp.Update(sql, new SqlParameter("id", id)) > 0;
         }
 
-        //
+        //显示所有的房间餐桌
+        public List<TempTableRomm> GetRommTypes(string rName)
+        {
+            List<TempTableRomm> list = new List<TempTableRomm>();
+            string sql = @"
+select d.id,d.name,r.name as tName,d.states from DiTable d
+join RoomType r
+on d.roomId=r.id
+where 1=1 ";
+            if (!string.IsNullOrWhiteSpace(rName) && rName != "全部")
+                sql += " and  r.name='" + rName + "'";
+            var sdr = SqlHelp.Query(sql);
+            while (sdr.Read())
+            {
+                TempTableRomm t = new TempTableRomm();
+                t.Id = (int)sdr["id"];
+                t.TName = sdr["tName"].ToString();
+                t.RName = sdr["name"].ToString();
+                t.State = ((TableEnum)((int)sdr["states"])).ToString();
+                list.Add(t);
+            }
+            return list;
+        }
 
+        //获取餐桌的使用状态
+        public string GetTableState(int id)
+        {
+            string sql = "select states from DiTable where id=@id";
+            var sdr = SqlHelp.Query(sql, new SqlParameter("id", id));
+            if (sdr.Read())
+                return ((TableEnum)(int)sdr[0]).ToString();
+            return null;
+        }
+
+        //根据餐桌Id获取具体的信息
+        public Tables GetTable(int id)
+        {
+            Tables t = new Tables();
+            string sql = "select * from DiTable where id=@id";
+            var sdr = SqlHelp.Query(sql, new SqlParameter("id", id));
+            while (sdr.Read())
+            {
+                t.Id = (int)sdr["id"];
+                t.Name = sdr["name"].ToString();
+                t.Rid = (int)sdr["roomid"];
+                t.State = (int)sdr["states"];
+            }
+            return t;
+        }
 
     }
 }

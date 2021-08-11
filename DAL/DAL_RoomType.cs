@@ -4,7 +4,7 @@ using DAL.Core;
 using MDL;
 namespace DAL
 {
-    public class ADL_RoomType
+    public class DAL_RoomType
     {
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace DAL
                 return SqlHelp.Update(sql,
                     new SqlParameter("name", room.Name),
                     new SqlParameter("area", room.Area),
-                    new SqlParameter("isZhekouo", room.IsZheKou),
+                    new SqlParameter("isZhekou", room.IsZheKou),
                     new SqlParameter("minConst", room.MinConst),
                     new SqlParameter("maxRenshu", room.MaxRenshu)
                     ) > 0;
@@ -60,7 +60,7 @@ namespace DAL
                 return SqlHelp.Update(sql,
                     new SqlParameter("name", room.Name),
                     new SqlParameter("area", room.Area),
-                    new SqlParameter("isZhekouo", room.IsZheKou),
+                    new SqlParameter("isZhekou", room.IsZheKou),
                     new SqlParameter("minConst", room.MinConst),
                     new SqlParameter("maxRenshu", room.MaxRenshu),
                     new SqlParameter("id", room.Id)

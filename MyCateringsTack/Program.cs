@@ -8,6 +8,9 @@ namespace MyCateringsTack
 {
     static class Program
     {
+
+        public static DefaultFrm frm;
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -16,6 +19,7 @@ namespace MyCateringsTack
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            frm = new DefaultFrm();
             Application.Run(new Login());
         }
     }

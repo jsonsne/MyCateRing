@@ -9,10 +9,10 @@ namespace BLL
 {
     public class BLL_RoomType
     {
-        ADL_RoomType rt;
+        DAL_RoomType rt;
         public BLL_RoomType()
         {
-            rt = new ADL_RoomType();
+            rt = new DAL_RoomType();
         }
 
         /// <summary>

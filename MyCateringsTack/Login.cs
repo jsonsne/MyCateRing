@@ -32,6 +32,7 @@ namespace MyCateringsTack
                 AdUsers us = new AdUsers() { UsCode = usCode,UsPwd=usPwd};
                if( new BLL_AdUsers().IsLoginSucees(us))
                 {
+                    StaticCommons.UsInfo = us;
                     this.Hide();
                     new FrmMain().Show();
                 }

@@ -13,7 +13,7 @@ namespace MyCateringsTack
             InitializeComponent();
         }
 
-        private void DefaultFrm_Load(object sender, System.EventArgs e)
+        public void DefaultFrm_Load(object sender, System.EventArgs e)
         {
             Maploop();
         }
@@ -21,6 +21,7 @@ namespace MyCateringsTack
         //生成房间餐桌
         private void Maploop()
         {
+            uiTabControl1.TabPages.Clear();
             List<RoomType> list = new BLL_RoomType().GetRoomTypes();
             foreach (var rt in list)
             {
