@@ -14,7 +14,7 @@ namespace MDL
         public string Name { get; set; }
         public string Area { get; set; }
         public bool IsZheKou { get; set; }
-        public double MinConst { get; set; }
+        public int MinConst { get; set; }
         public int MaxRenshu { get; set; }
 
     }

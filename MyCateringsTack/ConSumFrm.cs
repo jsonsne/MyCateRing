@@ -2,7 +2,7 @@
 
 namespace MyCateringsTack
 {
-    public partial class ConSumFrm : UITitlePage
+    public partial class ConSumFrm :UITitlePage
     {
         public ConSumFrm()
         {

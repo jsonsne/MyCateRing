@@ -156,7 +156,7 @@ namespace MyCateringsTack
             this.uiComboBox1.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.uiComboBox1.Size = new System.Drawing.Size(224, 29);
             this.uiComboBox1.TabIndex = 2;
-            this.uiComboBox1.Text = " 请选择";
+            this.uiComboBox1.Text = "请选择";
             this.uiComboBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddProductInfoFrm

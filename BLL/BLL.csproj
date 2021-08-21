@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL_AdUsers.cs" />
+    <Compile Include="BLL_CaterBill.cs" />
+    <Compile Include="BLL_CaterDetail.cs" />
     <Compile Include="BLL_Products.cs" />
     <Compile Include="BLL_ProductTypes.cs" />
     <Compile Include="BLL_RoomType.cs" />

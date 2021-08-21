@@ -1,4 +1,7 @@
-﻿using Sunny.UI;
+﻿using MDL;
+using Sunny.UI;
+using System;
+using System.Windows.Forms;
 
 namespace MyCateringsTack
 {
@@ -11,6 +14,8 @@ namespace MyCateringsTack
 
         public void FrmMain_Load(object sender, System.EventArgs e)
         {
+            lbldate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            uiLabel3.Text = StaticCommons.UsInfo.UsCode;
             //节点和页面绑定
             Aside.TabControl = MainTabControl;
 
@@ -41,6 +46,16 @@ namespace MyCateringsTack
         private void FrmMain_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void uiLinkLabel1_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.MessageBox.Show("您确定要注销登录吗？", "系统提示", System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Restart();
+                this.Close();
+            }
+
         }
     }
 }

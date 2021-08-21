@@ -53,5 +53,19 @@ namespace BLL
         //根据餐桌Id获取具体的信息
         public Tables GetTable(int id) => tb.GetTable(id);
 
+
+        /// <summary>
+        /// 开台
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Kaitans GetKaitans(int id) => tb.GetKaitans(id);
+
+        /// <summary>
+        /// 更改餐桌状态
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool UpdateTableState(int state,int id) => tb.UpdateState(state,id);
     }
 }

@@ -124,5 +124,36 @@ where 1=1 ";
             return t;
         }
 
+        //餐桌开台
+        public Kaitans GetKaitans(int id)
+        {
+            string sql = @"
+select dt.id as tbid ,dt.name tbName,rt.id as tyId,rt.name as tyName,rt.minConst ,rt.maxRenshu from DiTable dt
+join RoomType rt 
+on dt.roomId=rt.id
+where dt.id=@id
+";
+            Kaitans kaitans = new Kaitans();
+            var sdr = SqlHelp.Query(sql, new SqlParameter("id", id));
+            while (sdr.Read())
+            {
+                kaitans.TbId = (int)sdr["tbid"];
+                kaitans.TyId = (int)sdr["tyid"];
+                kaitans.TbName = sdr["tbname"].ToString();
+                kaitans.TyName = sdr["tyname"].ToString();
+                kaitans.TyMinCost = (int)sdr["minConst"];
+                kaitans.TyMaxRenshu = (int)sdr["maxrenshu"];
+            }
+            return kaitans;
+        }
+
+        //餐桌状态的改变
+        public bool UpdateState(int state, int id)
+        {
+            string sql = "update DiTable set states=@state where id=@id";
+            return SqlHelp.Update(sql, new SqlParameter("state", state), new SqlParameter("id", id)) > 0;
+        }
+
+
     }
 }

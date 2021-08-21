@@ -20,7 +20,7 @@ namespace BLL
         /// </summary>
         /// <param name="us"></param>
         /// <returns></returns>
-        public bool IsLoginSucees(AdUsers us) => users.IsLoginSucee(us);
+        public AdUsers IsLoginSucees(AdUsers us) => users.IsLoginSucee(us);
 
         /// <summary>
         /// 添加操作员和修改操作员

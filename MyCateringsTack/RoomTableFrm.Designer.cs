@@ -53,16 +53,16 @@ namespace MyCateringsTack
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.uiDataGridView2 = new Sunny.UI.UIDataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.uiButton7 = new Sunny.UI.UIButton();
             this.uiButton4 = new Sunny.UI.UIButton();
             this.uiButton5 = new Sunny.UI.UIButton();
             this.uiButton6 = new Sunny.UI.UIButton();
+            this.sb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rtId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PagePanel.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -321,7 +321,7 @@ namespace MyCateringsTack
             this.uiDataGridView2.ColumnHeadersHeight = 32;
             this.uiDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.uiDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.sb,
             this.rname,
             this.tName,
             this.state,
@@ -344,44 +344,6 @@ namespace MyCateringsTack
             this.uiDataGridView2.Style = Sunny.UI.UIStyle.Custom;
             this.uiDataGridView2.StyleCustomMode = true;
             this.uiDataGridView2.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // rname
-            // 
-            this.rname.DataPropertyName = "Rname";
-            this.rname.HeaderText = "餐桌名称";
-            this.rname.Name = "rname";
-            this.rname.ReadOnly = true;
-            // 
-            // tName
-            // 
-            this.tName.DataPropertyName = "tName";
-            this.tName.HeaderText = "房间类型";
-            this.tName.Name = "tName";
-            this.tName.ReadOnly = true;
-            // 
-            // state
-            // 
-            this.state.DataPropertyName = "state";
-            this.state.HeaderText = "餐桌状态";
-            this.state.Name = "state";
-            this.state.ReadOnly = true;
-            this.state.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // rtId
-            // 
-            this.rtId.DataPropertyName = "Rid";
-            this.rtId.HeaderText = "Rid";
-            this.rtId.Name = "rtId";
-            this.rtId.ReadOnly = true;
-            this.rtId.Visible = false;
             // 
             // panel3
             // 
@@ -438,6 +400,44 @@ namespace MyCateringsTack
             this.uiButton6.Text = "添加餐桌";
             this.uiButton6.Click += new System.EventHandler(this.uiButton6_Click);
             // 
+            // sb
+            // 
+            this.sb.DataPropertyName = "id";
+            this.sb.HeaderText = "id";
+            this.sb.Name = "sb";
+            this.sb.ReadOnly = true;
+            this.sb.Visible = false;
+            // 
+            // rname
+            // 
+            this.rname.DataPropertyName = "Rname";
+            this.rname.HeaderText = "餐桌名称";
+            this.rname.Name = "rname";
+            this.rname.ReadOnly = true;
+            // 
+            // tName
+            // 
+            this.tName.DataPropertyName = "tName";
+            this.tName.HeaderText = "房间类型";
+            this.tName.Name = "tName";
+            this.tName.ReadOnly = true;
+            // 
+            // state
+            // 
+            this.state.DataPropertyName = "state";
+            this.state.HeaderText = "餐桌状态";
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            this.state.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // rtId
+            // 
+            this.rtId.DataPropertyName = "Rid";
+            this.rtId.HeaderText = "Rid";
+            this.rtId.Name = "rtId";
+            this.rtId.ReadOnly = true;
+            this.rtId.Visible = false;
+            // 
             // RoomTableFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -486,7 +486,7 @@ namespace MyCateringsTack
         private System.Windows.Forms.DataGridViewCheckBoxColumn isZheKou;
         private System.Windows.Forms.DataGridViewTextBoxColumn maxRenshu;
         private System.Windows.Forms.DataGridViewTextBoxColumn area;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sb;
         private System.Windows.Forms.DataGridViewTextBoxColumn rname;
         private System.Windows.Forms.DataGridViewTextBoxColumn tName;
         private System.Windows.Forms.DataGridViewTextBoxColumn state;

@@ -63,8 +63,7 @@ namespace MyCateringsTack
             this.uiTextBox1.Name = "uiTextBox1";
             this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox1.Size = new System.Drawing.Size(193, 29);
-            this.uiTextBox1.TabIndex = 1;
-            this.uiTextBox1.Text = " ";
+            this.uiTextBox1.TabIndex = 0;
             // 
             // uiLabel2
             // 
@@ -98,8 +97,7 @@ namespace MyCateringsTack
             this.uiTextBox3.Name = "uiTextBox3";
             this.uiTextBox3.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox3.Size = new System.Drawing.Size(78, 29);
-            this.uiTextBox3.TabIndex = 1;
-            this.uiTextBox3.Text = " ";
+            this.uiTextBox3.TabIndex = 2;
             // 
             // uiTextBox2
             // 
@@ -114,7 +112,6 @@ namespace MyCateringsTack
             this.uiTextBox2.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox2.Size = new System.Drawing.Size(78, 29);
             this.uiTextBox2.TabIndex = 1;
-            this.uiTextBox2.Text = " ";
             // 
             // uiLabel4
             // 

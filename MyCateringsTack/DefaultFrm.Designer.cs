@@ -54,6 +54,16 @@ namespace MyCateringsTack
             this.uiComboBox1 = new Sunny.UI.UIComboBox();
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.uiDataGridView1 = new Sunny.UI.UIDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PagePanel.SuspendLayout();
             this.uiContextMenuStrip1.SuspendLayout();
             this.uiPanel1.SuspendLayout();
@@ -110,27 +120,27 @@ namespace MyCateringsTack
             this.餐桌状态ToolStripMenuItem,
             this.换桌ToolStripMenuItem});
             this.uiContextMenuStrip1.Name = "uiContextMenuStrip1";
-            this.uiContextMenuStrip1.Size = new System.Drawing.Size(145, 134);
+            this.uiContextMenuStrip1.Size = new System.Drawing.Size(181, 156);
             this.uiContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.uiContextMenuStrip1_Opening);
             // 
             // 顾客开单ToolStripMenuItem
             // 
             this.顾客开单ToolStripMenuItem.Name = "顾客开单ToolStripMenuItem";
-            this.顾客开单ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.顾客开单ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.顾客开单ToolStripMenuItem.Text = "顾客开单";
             this.顾客开单ToolStripMenuItem.Click += new System.EventHandler(this.顾客开单ToolStripMenuItem_Click);
             // 
             // 增加消费ToolStripMenuItem
             // 
             this.增加消费ToolStripMenuItem.Name = "增加消费ToolStripMenuItem";
-            this.增加消费ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.增加消费ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.增加消费ToolStripMenuItem.Text = "增加消费";
             this.增加消费ToolStripMenuItem.Click += new System.EventHandler(this.增加消费ToolStripMenuItem_Click);
             // 
             // 宾客结账ToolStripMenuItem
             // 
             this.宾客结账ToolStripMenuItem.Name = "宾客结账ToolStripMenuItem";
-            this.宾客结账ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.宾客结账ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.宾客结账ToolStripMenuItem.Text = "宾客结账";
             this.宾客结账ToolStripMenuItem.Click += new System.EventHandler(this.宾客结账ToolStripMenuItem_Click);
             // 
@@ -143,50 +153,51 @@ namespace MyCateringsTack
             this.改为停用ToolStripMenuItem,
             this.改为预约ToolStripMenuItem});
             this.餐桌状态ToolStripMenuItem.Name = "餐桌状态ToolStripMenuItem";
-            this.餐桌状态ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.餐桌状态ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.餐桌状态ToolStripMenuItem.Text = "餐桌状态";
             this.餐桌状态ToolStripMenuItem.Click += new System.EventHandler(this.餐桌状态ToolStripMenuItem_Click);
             // 
             // 当前状态ToolStripMenuItem
             // 
             this.当前状态ToolStripMenuItem.Name = "当前状态ToolStripMenuItem";
-            this.当前状态ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.当前状态ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.当前状态ToolStripMenuItem.Text = "当前状态";
             this.当前状态ToolStripMenuItem.Click += new System.EventHandler(this.当前状态ToolStripMenuItem_Click);
             // 
             // 改为可用ToolStripMenuItem
             // 
             this.改为可用ToolStripMenuItem.Name = "改为可用ToolStripMenuItem";
-            this.改为可用ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.改为可用ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.改为可用ToolStripMenuItem.Text = "改为可用";
             this.改为可用ToolStripMenuItem.Click += new System.EventHandler(this.改为可用ToolStripMenuItem_Click);
             // 
             // 改为占用ToolStripMenuItem
             // 
             this.改为占用ToolStripMenuItem.Name = "改为占用ToolStripMenuItem";
-            this.改为占用ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.改为占用ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.改为占用ToolStripMenuItem.Text = "改为占用";
             this.改为占用ToolStripMenuItem.Click += new System.EventHandler(this.改为占用ToolStripMenuItem_Click);
             // 
             // 改为停用ToolStripMenuItem
             // 
             this.改为停用ToolStripMenuItem.Name = "改为停用ToolStripMenuItem";
-            this.改为停用ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.改为停用ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.改为停用ToolStripMenuItem.Text = "改为停用";
             this.改为停用ToolStripMenuItem.Click += new System.EventHandler(this.改为停用ToolStripMenuItem_Click);
             // 
             // 改为预约ToolStripMenuItem
             // 
             this.改为预约ToolStripMenuItem.Name = "改为预约ToolStripMenuItem";
-            this.改为预约ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.改为预约ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.改为预约ToolStripMenuItem.Text = "改为预约";
             this.改为预约ToolStripMenuItem.Click += new System.EventHandler(this.改为预约ToolStripMenuItem_Click);
             // 
             // 换桌ToolStripMenuItem
             // 
             this.换桌ToolStripMenuItem.Name = "换桌ToolStripMenuItem";
-            this.换桌ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.换桌ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.换桌ToolStripMenuItem.Text = "换桌";
+            this.换桌ToolStripMenuItem.Visible = false;
             this.换桌ToolStripMenuItem.Click += new System.EventHandler(this.换桌ToolStripMenuItem_Click);
             // 
             // uiPanel1
@@ -273,8 +284,13 @@ namespace MyCateringsTack
             // 
             // uiDataGridView1
             // 
+            this.uiDataGridView1.AllowUserToAddRows = false;
+            this.uiDataGridView1.AllowUserToDeleteRows = false;
+            this.uiDataGridView1.AllowUserToResizeColumns = false;
+            this.uiDataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.uiDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.uiDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -285,7 +301,19 @@ namespace MyCateringsTack
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.uiDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.uiDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uiDataGridView1.ColumnHeadersHeight = 32;
+            this.uiDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.uiDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -299,15 +327,93 @@ namespace MyCateringsTack
             this.uiDataGridView1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiDataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.uiDataGridView1.MultiSelect = false;
             this.uiDataGridView1.Name = "uiDataGridView1";
+            this.uiDataGridView1.ReadOnly = true;
+            this.uiDataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.uiDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.uiDataGridView1.RowTemplate.Height = 29;
             this.uiDataGridView1.SelectedIndex = -1;
+            this.uiDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiDataGridView1.ShowGridLine = true;
             this.uiDataGridView1.Size = new System.Drawing.Size(800, 177);
             this.uiDataGridView1.TabIndex = 0;
             this.uiDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "pname";
+            this.Column1.HeaderText = "消费项目";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "pcount";
+            this.Column2.HeaderText = "消费数量";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "price";
+            this.Column3.HeaderText = "消费单价";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "sumprice";
+            this.Column4.HeaderText = "消费金额";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "finishDate";
+            this.Column5.HeaderText = "消费时间";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "tname";
+            this.Column6.HeaderText = "项目类别";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "id";
+            this.Column7.HeaderText = "id";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "biiId";
+            this.Column8.HeaderText = "biiId";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "pid";
+            this.Column9.HeaderText = "pid";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "costType";
+            this.Column10.HeaderText = "costType";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
             // 
             // DefaultFrm
             // 
@@ -349,5 +455,15 @@ namespace MyCateringsTack
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UIComboBox uiComboBox2;
         private Sunny.UI.UIComboBox uiComboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

@@ -24,7 +24,7 @@ namespace DAL
                     r.Name = sdr["name"].ToString();
                     r.Area = sdr["area"].ToString();
                     r.IsZheKou = (bool)sdr["isZheKou"];
-                    r.MinConst = (double)sdr["minConst"];
+                    r.MinConst = (int)sdr["minConst"];
                     r.MaxRenshu = (int)sdr["maxRenshu"];
 
                     list.Add(r);

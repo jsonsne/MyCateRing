@@ -12,13 +12,19 @@ namespace DAL
         /// </summary>
         /// <param name="us"></param>
         /// <returns></returns>
-        public bool IsLoginSucee(AdUsers us)
+        public AdUsers IsLoginSucee(AdUsers us)
         {
+            AdUsers users = new AdUsers();
             string sql = "select * from AdUsers where usCode=@code and usPwd=@pwd";
             SqlDataReader sdr = SqlHelp.Query(sql, new SqlParameter("code", us.UsCode), new SqlParameter("pwd", us.UsPwd));
-            if (sdr.Read())
-                return true;
-            return false;
+            while (sdr.Read())
+            {
+                users.Id = (int)sdr["id"];
+                users.UsCode = sdr["usCode"].ToString();
+                users.UsPwd = sdr["usPwd"].ToString();
+                users.Name = sdr["name"].ToString();
+            }
+            return users;
 
         }
 

@@ -15,6 +15,7 @@ namespace MyCateringsTack
         {
             uiDataGridView1.DataSource = new BLL_VipUsers().GetVipUsers();
             uiDataGridView1.SelectedIndex = 0;
+            uiDataGridView2.DataSource = new BLL_VipUsers().GetVipConSums();
         }
 
         //删除
@@ -78,6 +79,26 @@ namespace MyCateringsTack
             vap.VipUsers = vp;
             vap.ShowDialog();
             VipFrm_Load(null, null);
+        }
+
+        private void uiDataGridView2_CellMouseClick(object sender, System.Windows.Forms.DataGridViewCellMouseEventArgs e)
+        {
+            if (uiDataGridView2.SelectedRows.Count <= 0)
+                return;
+            int index = uiDataGridView2.CurrentCell.RowIndex;
+            int id = (int)uiDataGridView2.Rows[index].Cells["vipid"].Value;
+            uiDataGridView3.DataSource = new BLL_VipUsers().GetVipConSums(id.ToString());
+        }
+
+        private void uiButton5_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(uiTextBox2.Text))
+            {
+                UIMessageTip.ShowError("请输入要查询的会员编号或姓名！");
+                return;
+            }
+            string str = uiTextBox2.Text;
+            uiDataGridView2.DataSource = new BLL_VipUsers().GetVipConSums(str);
         }
     }
 }

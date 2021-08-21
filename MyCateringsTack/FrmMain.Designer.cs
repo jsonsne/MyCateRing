@@ -29,21 +29,22 @@ namespace MyCateringsTack
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("餐饮首页");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("账单查询");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("消费查询");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("营业查询", new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("会员管理");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("房间餐台设置");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("商品管理");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("系统管理");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("餐饮首页");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("消费查询");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("账单查询");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("营业查询", new System.Windows.Forms.TreeNode[] {
+            treeNode34,
+            treeNode35});
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("会员管理");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("房间餐台设置");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("商品管理");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("系统管理");
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiButton3 = new Sunny.UI.UIButton();
-            this.uiButton2 = new Sunny.UI.UIButton();
-            this.uiButton1 = new Sunny.UI.UIButton();
+            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.uiLinkLabel1 = new Sunny.UI.UILinkLabel();
+            this.lbldate = new Sunny.UI.UILabel();
             this.Header.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,34 +53,35 @@ namespace MyCateringsTack
             // 
             this.Aside.LineColor = System.Drawing.Color.Black;
             this.Aside.Location = new System.Drawing.Point(0, 98);
-            treeNode1.Name = "节点0";
-            treeNode1.Text = "餐饮首页";
-            treeNode2.Name = "节点6";
-            treeNode2.Text = "账单查询";
-            treeNode3.Name = "节点7";
-            treeNode3.Text = "消费查询";
-            treeNode4.Name = "节点1";
-            treeNode4.Text = "营业查询";
-            treeNode5.Name = "节点2";
-            treeNode5.Text = "会员管理";
-            treeNode6.Name = "节点3";
-            treeNode6.Text = "房间餐台设置";
-            treeNode7.Name = "节点4";
-            treeNode7.Text = "商品管理";
-            treeNode8.Name = "节点5";
-            treeNode8.Text = "系统管理";
+            treeNode33.Name = "节点0";
+            treeNode33.Text = "餐饮首页";
+            treeNode34.Name = "节点6";
+            treeNode34.Text = "消费查询";
+            treeNode35.Name = "节点7";
+            treeNode35.Text = "账单查询";
+            treeNode36.Name = "节点1";
+            treeNode36.Text = "营业查询";
+            treeNode37.Name = "节点2";
+            treeNode37.Text = "会员管理";
+            treeNode38.Name = "节点3";
+            treeNode38.Text = "房间餐台设置";
+            treeNode39.Name = "节点4";
+            treeNode39.Text = "商品管理";
+            treeNode40.Name = "节点5";
+            treeNode40.Text = "系统管理";
             this.Aside.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8});
+            treeNode33,
+            treeNode36,
+            treeNode37,
+            treeNode38,
+            treeNode39,
+            treeNode40});
             this.Aside.Size = new System.Drawing.Size(250, 630);
+            this.Aside.Style = Sunny.UI.UIStyle.Custom;
             // 
             // Header
             // 
-            this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Header.Controls.Add(this.uiPanel1);
             this.Header.Controls.Add(this.uiLabel1);
             this.Header.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
@@ -93,68 +95,96 @@ namespace MyCateringsTack
             this.uiLabel1.Location = new System.Drawing.Point(3, 2);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(237, 58);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel1.TabIndex = 0;
             this.uiLabel1.Text = "CateRing";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiPanel1
             // 
-            this.uiPanel1.Controls.Add(this.uiButton3);
-            this.uiPanel1.Controls.Add(this.uiButton2);
-            this.uiPanel1.Controls.Add(this.uiButton1);
+            this.uiPanel1.Controls.Add(this.lbldate);
+            this.uiPanel1.Controls.Add(this.uiLinkLabel1);
+            this.uiPanel1.Controls.Add(this.uiLabel3);
+            this.uiPanel1.Controls.Add(this.uiLabel2);
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.uiPanel1.FillColor = System.Drawing.Color.Transparent;
             this.uiPanel1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiPanel1.Location = new System.Drawing.Point(693, 0);
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.uiPanel1.Size = new System.Drawing.Size(407, 63);
             this.uiPanel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel1.StyleCustomMode = true;
             this.uiPanel1.TabIndex = 1;
             this.uiPanel1.Text = null;
             // 
-            // uiButton3
+            // uiLabel2
             // 
-            this.uiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton3.Location = new System.Drawing.Point(304, 20);
-            this.uiButton3.Name = "uiButton3";
-            this.uiButton3.Size = new System.Drawing.Size(100, 35);
-            this.uiButton3.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton3.TabIndex = 0;
-            this.uiButton3.Text = "顾客结账";
+            this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel2.ForeColor = System.Drawing.Color.Red;
+            this.uiLabel2.Location = new System.Drawing.Point(164, 24);
+            this.uiLabel2.Name = "uiLabel2";
+            this.uiLabel2.Size = new System.Drawing.Size(71, 23);
+            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel2.TabIndex = 0;
+            this.uiLabel2.Text = "欢迎：";
+            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiButton2
+            // uiLabel3
             // 
-            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(198, 20);
-            this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(100, 35);
-            this.uiButton2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton2.TabIndex = 0;
-            this.uiButton2.Text = "增加消费";
+            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel3.ForeColor = System.Drawing.Color.Red;
+            this.uiLabel3.Location = new System.Drawing.Point(219, 25);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(71, 23);
+            this.uiLabel3.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel3.TabIndex = 0;
+            this.uiLabel3.Text = "Admin";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // uiButton1
+            // uiLinkLabel1
             // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(92, 20);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(100, 35);
-            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton1.TabIndex = 0;
-            this.uiButton1.Text = "顾客开单";
+            this.uiLinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.uiLinkLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLinkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.uiLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.uiLinkLabel1.LinkColor = System.Drawing.Color.Yellow;
+            this.uiLinkLabel1.Location = new System.Drawing.Point(343, 25);
+            this.uiLinkLabel1.Name = "uiLinkLabel1";
+            this.uiLinkLabel1.Size = new System.Drawing.Size(61, 23);
+            this.uiLinkLabel1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLinkLabel1.TabIndex = 1;
+            this.uiLinkLabel1.TabStop = true;
+            this.uiLinkLabel1.Text = "注销";
+            this.uiLinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.uiLinkLabel1.Click += new System.EventHandler(this.uiLinkLabel1_Click);
+            // 
+            // lbldate
+            // 
+            this.lbldate.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.lbldate.ForeColor = System.Drawing.Color.Lime;
+            this.lbldate.Location = new System.Drawing.Point(121, 0);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(286, 23);
+            this.lbldate.Style = Sunny.UI.UIStyle.Custom;
+            this.lbldate.TabIndex = 2;
+            this.lbldate.Text = "uiLabel4";
+            this.lbldate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 728);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 726);
             this.Name = "FrmMain";
+            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Style = Sunny.UI.UIStyle.Custom;
             this.StyleCustomMode = true;
             this.Text = "";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Header.ResumeLayout(false);
@@ -167,8 +197,9 @@ namespace MyCateringsTack
 
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UIPanel uiPanel1;
-        private Sunny.UI.UIButton uiButton3;
-        private Sunny.UI.UIButton uiButton2;
-        private Sunny.UI.UIButton uiButton1;
+        private Sunny.UI.UILabel uiLabel3;
+        private Sunny.UI.UILabel uiLabel2;
+        private Sunny.UI.UILinkLabel uiLinkLabel1;
+        private Sunny.UI.UILabel lbldate;
     }
 }

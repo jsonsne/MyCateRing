@@ -1,6 +1,7 @@
 ﻿using BLL;
 using MDL;
 using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -30,16 +31,17 @@ namespace MyCateringsTack
                 t.Text = rt.Name;
                 t.Tag = rt;
                 uiTabControl1.TabPages.Add(t);
-                AddShowTable(t, rt.Id,99);
+                AddShowTable(t, rt.Id, 99);
             }
         }
 
-        private void AddShowTable(TabPage t, int rid,int state)
+        private void AddShowTable(TabPage t, int rid, int state)
         {
             t.Controls.Clear();
             //添加每个房间中的餐桌
             ListView lv = new ListView();
             lv.MouseClick += Lv_MouseClick;
+            lv.Click += Lv_Click;
             lv.Dock = DockStyle.Fill;
             lv.Font = new System.Drawing.Font("微软雅黑", 12);
             lv.LargeImageList = this.imageList1;
@@ -58,14 +60,27 @@ namespace MyCateringsTack
             t.Controls.Add(lv);
         }
 
+        private void Lv_Click(object sender, EventArgs e)
+        {
 
+            ListView lv = sender as ListView;
+            if (lv.SelectedItems.Count <= 0)
+                return;
+            Tables tb = lv.SelectedItems[0].Tag as Tables;
+            if (tb != null)
+            {
+                uiDataGridView1.DataSource = new BLL_CaterDetail().GetCaters(tb.Id);
+            }
 
+        }
 
         //右键菜单
         private void Lv_MouseClick(object sender, MouseEventArgs e)
         {
             ListView lv = sender as ListView;
             if (lv.SelectedItems.Count <= 0)
+                return;
+            if (e.Button == MouseButtons.Left)
                 return;
             TableEnum tEnum = (TableEnum)lv.SelectedItems[0].ImageIndex;
             switch (tEnum)
@@ -74,7 +89,12 @@ namespace MyCateringsTack
                     ChangeMenuStrip(true, false, false, false, "可用", false, true, true, true);
                     break;
                 case TableEnum.占用:
-                    ChangeMenuStrip(false, true, true, true, "占用", true, false, true, true);
+                    Tables tb = lv.SelectedItems[0].Tag as Tables;
+                    CaterBill cater = new BLL_CaterBill().GetCater(tb.Id);
+                    if (!string.IsNullOrWhiteSpace(cater.Id) && cater.IsJieZhang == false)
+                        ChangeMenuStrip(false, true, true, true, "占用", false, false, false, false);
+                    else
+                        ChangeMenuStrip(false, true, true, true, "占用", true, false, true, true);
                     break;
                 case TableEnum.停用:
                     ChangeMenuStrip(false, false, false, false, "停用", true, true, false, true);
@@ -109,6 +129,7 @@ namespace MyCateringsTack
         private void 改为占用ToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             UpdateTableState((int)TableEnum.占用);
+
         }
 
         private void 改为停用ToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -129,7 +150,7 @@ namespace MyCateringsTack
             Tables tb = (Tables)lvi.SelectedItems[0].Tag;
             tb.State = num;
             new BLL_Tables().UpdateTableNum(tb);
-            lvi.SelectedItems[0].ImageIndex = num;         
+            lvi.SelectedItems[0].ImageIndex = num;
         }
 
 
@@ -181,7 +202,7 @@ namespace MyCateringsTack
         private void ShowStateTable(int num)
         {
             var tbs = uiTabControl1.TabPages;
-            for(int i = 0; i < tbs.Count; i++)
+            for (int i = 0; i < tbs.Count; i++)
             {
                 int rid = ((RoomType)tbs[i].Tag).Id;
                 AddShowTable(tbs[i], rid, num);
@@ -207,19 +228,49 @@ namespace MyCateringsTack
         {
 
         }
-
         private void 顾客开单ToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-
+            var lvi = uiTabControl1.SelectedTab.Controls[0] as ListView;
+            int id = ((Tables)lvi.SelectedItems[0].Tag).Id;
+            Kaitans ks = new BLL_Tables().GetKaitans(id);
+            AddKaiTaiFrm frm = new AddKaiTaiFrm();
+            frm.MyTb = ks;
+            frm.ShowDialog();
+            DefaultFrm_Load(null, null);
         }
 
         private void 增加消费ToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            var lvi = uiTabControl1.SelectedTab.Controls[0] as ListView;
+            int id = ((Tables)lvi.SelectedItems[0].Tag).Id;
 
+            CaterBill cater = new BLL_CaterBill().GetCater(id);
+            if (string.IsNullOrWhiteSpace(cater.Id))
+            {
+                顾客开单ToolStripMenuItem_Click(null, null);
+            }
+            else
+            {
+                AddOrderFrm frm = new AddOrderFrm();
+                frm.TableId = id;
+                frm.ShowDialog();
+                DefaultFrm_Load(null, null);
+            }
         }
 
         private void 宾客结账ToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            ListView lv = uiTabControl1.SelectedTab.Controls[0] as ListView;
+            var tb = lv.SelectedItems[0].Tag as Tables;
+            if (tb == null)
+            {
+                UIMessageTip.ShowError("发生错误,请选择餐台在操作！");
+                return;
+            }
+            JieZhangFrm frm = new JieZhangFrm();
+            frm.Mytb = tb;
+            frm.ShowDialog();
+            DefaultFrm_Load(null, null);
 
         }
 
@@ -238,7 +289,7 @@ namespace MyCateringsTack
 
         }
 
-      
+
 
         private void uiPanel2_Click(object sender, System.EventArgs e)
         {

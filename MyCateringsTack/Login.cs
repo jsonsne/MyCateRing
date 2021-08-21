@@ -29,10 +29,11 @@ namespace MyCateringsTack
             }
             else
             {
-                AdUsers us = new AdUsers() { UsCode = usCode,UsPwd=usPwd};
-               if( new BLL_AdUsers().IsLoginSucees(us))
+                AdUsers us = new AdUsers() { UsCode = usCode, UsPwd = usPwd };
+                AdUsers usTo = new BLL_AdUsers().IsLoginSucees(us);
+                if (usTo.Id != 0)
                 {
-                    StaticCommons.UsInfo = us;
+                    StaticCommons.UsInfo = usTo;
                     this.Hide();
                     new FrmMain().Show();
                 }
@@ -40,7 +41,7 @@ namespace MyCateringsTack
                 {
                     UIMessageTip.ShowError("账号或密码有误！", 1500);
                 }
-
+                uiTextBox2.Focus();
             }
         }
     }

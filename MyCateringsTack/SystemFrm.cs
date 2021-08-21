@@ -117,8 +117,8 @@ namespace MyCateringsTack
             us.UsCode = uiDataGridView1.SelectedRows[0].Cells["cCode"].Value.ToString();
             us.UsPwd = uiDataGridView1.SelectedRows[0].Cells["cpwd"].Value.ToString();
             us.Id= (int)uiDataGridView1.SelectedRows[0].Cells["cid"].Value;
-            bool bl = new BLL_AdUsers().IsLoginSucees(us);
-            if (bl)
+           AdUsers users = new BLL_AdUsers().IsLoginSucees(us);
+            if (users.Id!=0)
             {
                 UIMessageTip.ShowError("该操作员正处于登录中，不能删除！");
                 return;
@@ -127,7 +127,7 @@ namespace MyCateringsTack
             if (System.Windows.Forms.MessageBox.Show("是否确认删除？", "系统提示", System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 return;
 
-            bl = new BLL_AdUsers().DelUsers(us.Id);
+           bool bl = new BLL_AdUsers().DelUsers(us.Id);
             if (bl)
                 UIMessageTip.ShowOk("删除成功！");
             else

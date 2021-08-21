@@ -59,6 +59,33 @@ namespace DAL.Core
             }
         }
 
+        /// <summary>
+        /// 执行sql语句并返回结果的第一行第一列的值
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="sqls"></param>
+        /// <returns></returns>
+        public static object Scalar(string sql,params SqlParameter[] sqls)
+        {
+            using(SqlConnection conn=new SqlConnection(CONSTR))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sql,conn);
+                    if (sqls != null)
+                        cmd.Parameters.AddRange(sqls);
+                    return cmd.ExecuteScalar();
+                }
+                catch (System.Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+
 
     }
 }

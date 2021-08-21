@@ -25,7 +25,7 @@ namespace MyCateringsTack
             if (MyroomType == null)
                 MyroomType = new RoomType();
             MyroomType.Name = uiTextBox1.Text;
-            MyroomType.MinConst = double.Parse(uiTextBox2.Text);
+            MyroomType.MinConst = int.Parse(uiTextBox2.Text);
             MyroomType.MaxRenshu = int.Parse(uiTextBox3.Text);
             MyroomType.Area = uiTextBox4.Text;
             MyroomType.IsZheKou = uiCheckBox1.Checked;

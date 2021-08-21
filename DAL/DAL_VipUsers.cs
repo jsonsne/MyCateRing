@@ -13,7 +13,7 @@ namespace DAL
     {
 
         //查询显示
-        public List<ShowVipUsers> GetVipUsers(string idOrName="aaa")
+        public List<ShowVipUsers> GetVipUsers(string idOrName = "aaa")
         {
             List<ShowVipUsers> list = new List<ShowVipUsers>();
             string sql = @"
@@ -24,18 +24,18 @@ where state=0
 ";
             if (idOrName != "aaa")
             {
-                if(int.TryParse(idOrName,out int id))
-                    sql+= "and vi.Id=" + idOrName ;
+                if (int.TryParse(idOrName, out int id))
+                    sql += "and vi.Id=" + idOrName;
                 else
-                 sql += "  and vi.name like'%" + idOrName + "%'";
+                    sql += "  and vi.name like'%" + idOrName + "%'";
             }
             var sdr = SqlHelp.Query(sql);
             while (sdr.Read())
             {
                 ShowVipUsers vp = new ShowVipUsers();
-                vp.Id =(int) sdr["id"];
+                vp.Id = (int)sdr["id"];
                 vp.Name = sdr["name"].ToString();
-                vp.Gender = (bool)sdr["gender"]? "女" : "男";
+                vp.Gender = (bool)sdr["gender"] ? "女" : "男";
                 vp.Phone = sdr["phone"].ToString();
                 vp.StartDate = sdr["startDate"].ToString();
                 vp.EndDate = sdr["endDate"].ToString();
@@ -43,7 +43,7 @@ where state=0
                 vp.ZheKou = (double)sdr["zhekou"];
                 vp.VcId = (int)sdr["vcid"];
                 list.Add(vp);
-             }
+            }
             return list;
         }
 
@@ -70,7 +70,7 @@ where state=0
                     new SqlParameter("vid", vp.VipId),
                     new SqlParameter("endDate", vp.EndDate)
                     ) > 0;
-            } 
+            }
         }
 
         //删除
@@ -78,6 +78,73 @@ where state=0
         {
             string sql = "update VipInfo set state=1 where id=@id";
             return SqlHelp.Update(sql, new SqlParameter("id", id)) > 0;
+        }
+
+        //获取会员id，名称，等级名称，折扣率
+        public ShowVipUsers GetVipUsers(int id)
+        {
+            ShowVipUsers vip = new ShowVipUsers();
+            string sql = @"
+select v.id,v.name,c.name as cName,c.zheKou from VipInfo v
+join VipCost c
+on v.vipId=c.id
+where v.id=@id and v.state=0
+";
+            var sdr = SqlHelp.Query(sql, new SqlParameter("id", id));
+            while (sdr.Read())
+            {
+                vip.Id = (int)sdr["id"];
+                vip.Name = sdr["name"].ToString();
+                vip.VName = sdr["cName"].ToString();
+                vip.ZheKou = (double)sdr["zhekou"];
+            }
+            return vip;
+        }
+
+        //获取会员消费信息
+        public List<VipConSum> GetVipConSums(string identityStr=null)
+        {
+            List<VipConSum> list = new List<VipConSum>();
+            string sql = @"
+select v.id vid, v.name,b.id bid,b.SumPrice,p.name pname,c.pCount,c.price,vc.name vname,vc.zheKou from VipInfo v 
+join VipCost vc
+on vc.id=v.vipId
+join CaterBill b
+on v.id=b.vipId
+join CaterDetail c
+on c.biiId=b.id
+join ProductInfo p
+on p.id=c.pId
+where 1=1
+";
+            if (!string.IsNullOrWhiteSpace(identityStr))
+            {
+                if (int.TryParse(identityStr, out int num))
+                {
+                    sql += $" and v.id={num}";
+                }
+                else
+                {
+                    sql += $" and v.name like'%{identityStr}%'";
+                }
+            }
+
+            var sdr = SqlHelp.Query(sql);
+            while (sdr.Read())
+            {
+                VipConSum vs = new VipConSum();
+                vs.Vid = (int)sdr["vid"];
+                vs.Name = sdr["name"].ToString();
+                vs.Bid = sdr["bid"].ToString();
+                vs.SumPrice = (double)sdr["sumprice"];
+                vs.Pname = (string)sdr["pname"];
+                vs.Pcount = (int)sdr["pcount"];
+                vs.Price = (double)sdr["price"];
+                vs.Vname = (string)sdr["vname"];
+                vs.ZheKou = (double)sdr["zhekou"];
+                list.Add(vs);
+            }
+            return list;
         }
 
     }
