@@ -27,10 +27,15 @@ namespace MyCateringsTack
             lblcz.Text = Mytb.Name;
             List<CaterDetail> list = new BLL_CaterDetail().GetCaters(Mytb.Id);
             lblzh.Text = list[0].BiiId;
-            lblje.Text = lblys.Text = lblss.Text = list.Select(c => c.SumPrice).Sum().ToString();
+            ShowYouohu();
             uiDataGridView1.DataSource = list;
         }
 
+        public void ShowYouohu()
+        {
+            List<CaterDetail> list = new BLL_CaterDetail().GetCaters(Mytb.Id);
+            lblje.Text = lblys.Text = lblss.Text = list.Select(c => c.SumPrice).Sum().ToString();
+        }
         private void uiTextBox1_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(uiTextBox1.Text))
@@ -38,7 +43,9 @@ namespace MyCateringsTack
                 lblhym.Text =
                 lblyhjb.Text =
                 lblhyzk.Text =
+                 lblyh.Text =
                 lblhyId.Text = "";
+                ShowYouohu();
                 return;
             }
 

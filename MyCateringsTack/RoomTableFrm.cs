@@ -49,7 +49,8 @@ namespace MyCateringsTack
         {
             AddRommType r = new AddRommType();
             r.ShowDialog();
-            RoomTableFrm_Load(null, null);
+            RoomTableFrm_Load(null, null); 
+            frm1.ShowEvent();
             //Program.frm.DefaultFrm_Load(null, null);
         }
 
@@ -75,7 +76,8 @@ namespace MyCateringsTack
             addRommType.ShowDialog();
 
             RoomTableFrm_Load(null, null);
-          // Program.frm.DefaultFrm_Load(null, null);
+            frm1.ShowEvent();
+            // Program.frm.DefaultFrm_Load(null, null);
         }
 
         //删除房间类型
@@ -102,7 +104,7 @@ namespace MyCateringsTack
             else
                 UIMessageTip.ShowError("删除房间类型失败！");
             RoomTableFrm_Load(null, null);
-            frm1.DefaultFrm_Load(null, null);
+            frm1.ShowEvent();
         }
 
         //添加餐桌
@@ -111,7 +113,7 @@ namespace MyCateringsTack
             UpdateTable up = new UpdateTable();
             up.ShowDialog();
             RoomTableFrm_Load(null, null);
-
+            frm1.ShowEvent();
         }
 
         //批量添加餐桌
@@ -120,6 +122,7 @@ namespace MyCateringsTack
             PiAddTables pa = new PiAddTables();
             pa.ShowDialog();
             RoomTableFrm_Load(null, null);
+            frm1.ShowEvent();
         }
 
         //修改餐桌
@@ -146,6 +149,7 @@ namespace MyCateringsTack
             up.Txt = uiDataGridView2.SelectedRows[0].Cells["tName"].Value.ToString();
             up.ShowDialog();
             RoomTableFrm_Load(null, null);
+            frm1.ShowEvent();
         }
 
         //删除餐桌
@@ -173,7 +177,7 @@ namespace MyCateringsTack
             else
                 UIMessageTip.ShowError("删除失败！");
             RoomTableFrm_Load(null, null);
-
+            frm1.ShowEvent();
         }
     }
 }

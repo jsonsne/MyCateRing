@@ -6,18 +6,29 @@ namespace MyCateringsTack
 {
     public partial class VipFrm : UITitlePage
     {
+        public delegate void ReSetWinfrom();
+        public event ReSetWinfrom Myevet2;
         public VipFrm()
         {
             InitializeComponent();
+            Myevet2 += ShowData;
+        }
+        public void ShowEvent()
+        {
+            if (Myevet2 != null)
+                Myevet2.Invoke();
         }
         //加载事件
         private void VipFrm_Load(object sender, System.EventArgs e)
+        {
+            ShowEvent();
+        }
+        public void ShowData()
         {
             uiDataGridView1.DataSource = new BLL_VipUsers().GetVipUsers();
             uiDataGridView1.SelectedIndex = 0;
             uiDataGridView2.DataSource = new BLL_VipUsers().GetVipConSums();
         }
-
         //删除
         private void uiButton3_Click(object sender, System.EventArgs e)
         {
@@ -86,8 +97,8 @@ namespace MyCateringsTack
             if (uiDataGridView2.SelectedRows.Count <= 0)
                 return;
             int index = uiDataGridView2.CurrentCell.RowIndex;
-            int id = (int)uiDataGridView2.Rows[index].Cells["vipid"].Value;
-            uiDataGridView3.DataSource = new BLL_VipUsers().GetVipConSums(id.ToString());
+            string id = uiDataGridView2.Rows[index].Cells["bid"].Value.ToString();
+            uiDataGridView3.DataSource = new BLL_VipUsers().GetVipDetails(id);
         }
 
         private void uiButton5_Click(object sender, System.EventArgs e)

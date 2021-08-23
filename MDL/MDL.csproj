@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdUsers.cs" />
+    <Compile Include="BiiConSum.cs" />
     <Compile Include="CaterBill.cs" />
     <Compile Include="CaterDetail.cs" />
     <Compile Include="Kaitans.cs" />
@@ -51,11 +52,13 @@
     <Compile Include="RoomType.cs" />
     <Compile Include="ShowVipUsers.cs" />
     <Compile Include="StaticCommons.cs" />
+    <Compile Include="TableConSum.cs" />
     <Compile Include="TableEnum.cs" />
     <Compile Include="Tables.cs" />
     <Compile Include="TempTableRomm.cs" />
     <Compile Include="VipConSum.cs" />
     <Compile Include="VipCost.cs" />
+    <Compile Include="VipDetails.cs" />
     <Compile Include="VipUsers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

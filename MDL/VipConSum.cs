@@ -12,9 +12,6 @@ namespace MDL
         public string Name { get; set; }
         public string Bid { get; set; }
         public double SumPrice { get; set; }
-        public string Pname { get; set; }
-        public int Pcount { get; set; }
-        public double Price { get; set; }
         public string Vname { get; set; }
         public double ZheKou { get; set; }
 

@@ -60,7 +60,6 @@ namespace MyCateringsTack
             this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox1.Size = new System.Drawing.Size(202, 29);
             this.uiTextBox1.TabIndex = 0;
-            this.uiTextBox1.Text = " ";
             // 
             // uiLabel2
             // 

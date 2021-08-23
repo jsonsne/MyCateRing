@@ -78,6 +78,7 @@ namespace MyCateringsTack
             // uiLabel1
             // 
             this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.Blue;
             this.uiLabel1.Location = new System.Drawing.Point(16, 44);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(210, 43);
@@ -164,6 +165,7 @@ namespace MyCateringsTack
             // uiLabel5
             // 
             this.uiLabel5.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel5.ForeColor = System.Drawing.Color.Blue;
             this.uiLabel5.Location = new System.Drawing.Point(478, 50);
             this.uiLabel5.Name = "uiLabel5";
             this.uiLabel5.Size = new System.Drawing.Size(224, 43);
@@ -174,6 +176,7 @@ namespace MyCateringsTack
             // uiLabel6
             // 
             this.uiLabel6.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel6.ForeColor = System.Drawing.Color.Blue;
             this.uiLabel6.Location = new System.Drawing.Point(686, 54);
             this.uiLabel6.Name = "uiLabel6";
             this.uiLabel6.Size = new System.Drawing.Size(343, 37);
@@ -225,6 +228,7 @@ namespace MyCateringsTack
             // uiLabel9
             // 
             this.uiLabel9.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel9.ForeColor = System.Drawing.Color.Red;
             this.uiLabel9.Location = new System.Drawing.Point(585, 111);
             this.uiLabel9.Name = "uiLabel9";
             this.uiLabel9.Size = new System.Drawing.Size(100, 23);
@@ -235,6 +239,7 @@ namespace MyCateringsTack
             // uiLabel10
             // 
             this.uiLabel10.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel10.ForeColor = System.Drawing.Color.Red;
             this.uiLabel10.Location = new System.Drawing.Point(585, 161);
             this.uiLabel10.Name = "uiLabel10";
             this.uiLabel10.Size = new System.Drawing.Size(100, 23);
@@ -511,6 +516,7 @@ namespace MyCateringsTack
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddOrderFrm";
+            this.StyleCustomMode = true;
             this.Text = "增加消费";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddOrderFrm_FormClosing);
             this.Load += new System.EventHandler(this.AddOrderFrm_Load);

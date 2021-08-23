@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MDL
 {
-    public class StaticCommons
+    public  class StaticCommons
     {
         public static AdUsers UsInfo { get; set; }
+        public delegate void ResetWinfrom();
     }
 }

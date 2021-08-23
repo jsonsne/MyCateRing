@@ -36,5 +36,24 @@ namespace BLL
         /// <returns></returns>
         public bool UpdateCaterBii(CaterBill cater) => MyBill.UpdateCaterBii(cater);
 
+        /// <summary>
+        /// 查询订单
+        /// </summary>
+        /// <param name="dateTime1"></param>
+        /// <param name="dateTime2"></param>
+        /// <param name="adus"></param>
+        /// <param name="tname"></param>
+        /// <returns></returns>
+        public List<BiiConSum> GetConSums(string dateTime1 = null, string dateTime2 = null, string adus = null, string tname = null) => MyBill.GetConSums(dateTime1
+            , dateTime2, adus, tname);
+
+        /// <summary>
+        /// 账单明细
+        /// </summary>
+        /// <param name="bid"></param>
+        /// <returns></returns>
+        public List<TableConSum> GetConSumsDetails(string bid) => MyBill.GetConSumsDetails(bid);
+
+
     }
 }

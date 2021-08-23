@@ -102,19 +102,15 @@ where v.id=@id and v.state=0
         }
 
         //获取会员消费信息
-        public List<VipConSum> GetVipConSums(string identityStr=null)
+        public List<VipConSum> GetVipConSums(string identityStr = null)
         {
             List<VipConSum> list = new List<VipConSum>();
             string sql = @"
-select v.id vid, v.name,b.id bid,b.SumPrice,p.name pname,c.pCount,c.price,vc.name vname,vc.zheKou from VipInfo v 
-join VipCost vc
-on vc.id=v.vipId
+select v.id vid, v.name,b.id bid,b.SumPrice,vc.name vname,vc.zheKou from VipInfo v 
 join CaterBill b
 on v.id=b.vipId
-join CaterDetail c
-on c.biiId=b.id
-join ProductInfo p
-on p.id=c.pId
+join VipCost vc
+on vc.id=v.vipId
 where 1=1
 ";
             if (!string.IsNullOrWhiteSpace(identityStr))
@@ -137,15 +133,33 @@ where 1=1
                 vs.Name = sdr["name"].ToString();
                 vs.Bid = sdr["bid"].ToString();
                 vs.SumPrice = (double)sdr["sumprice"];
-                vs.Pname = (string)sdr["pname"];
-                vs.Pcount = (int)sdr["pcount"];
-                vs.Price = (double)sdr["price"];
-                vs.Vname = (string)sdr["vname"];
                 vs.ZheKou = (double)sdr["zhekou"];
                 list.Add(vs);
             }
             return list;
         }
-
+        //获取会员消费详细信息
+        public List<VipDetails> GetVipDetails(string bid)
+        {
+            List<VipDetails> list = new List<VipDetails>();
+            string sql = @"
+select p.name,c.pCount,p.price from CaterBill b
+join CaterDetail c
+on b.id=c.biiId
+join ProductInfo p
+on p.id=c.pId
+where b.id=@id
+";
+            var sdr = SqlHelp.Query(sql, new SqlParameter("id", bid));
+            while (sdr.Read())
+            {
+                VipDetails d = new VipDetails();
+                d.Pname = (string)sdr["name"];
+                d.Pcount = (int)sdr["pcount"];
+                d.Price = (double)sdr["price"];
+                list.Add(d);
+            }
+            return list;
+        }
     }
 }

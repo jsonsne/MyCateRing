@@ -66,6 +66,14 @@ namespace BLL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool UpdateTableState(int state,int id) => tb.UpdateState(state,id);
+        public bool UpdateTableState(int state, int id) => tb.UpdateState(state, id);
+
+        /// <summary>
+        /// 获取餐桌具体的消费
+        /// </summary>
+        /// <param name="tname"></param>
+        /// <param name="pname"></param>
+        /// <returns></returns>
+        public List<TableConSum> GetConSums(string dateTime1=null, string dateTime2=null, string tname = null, string pname = null) => tb.GetConSums(dateTime1,dateTime2,tname, pname);
     }
 }

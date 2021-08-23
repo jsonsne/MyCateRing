@@ -9,16 +9,42 @@ namespace MyCateringsTack
 {
     public partial class DefaultFrm : UITitlePage
     {
+        public delegate void ReSetWinfrom();
+        public event ReSetWinfrom Myevet;
         public DefaultFrm()
         {
             InitializeComponent();
+            Myevet += Maploop;
+        }
+        public DefaultFrm(VipFrm vp)
+        {
+            InitializeComponent();
+            Myevet += Maploop;
+            vf = vp;
         }
 
+        public DefaultFrm(VipFrm vp, CateBillFrm cbi, ConSumFrm cda)
+        {
+            InitializeComponent();
+            Myevet += Maploop;
+            vf = vp;
+            cb = cbi;
+            ca = cda;
+        }
+        private VipFrm vf;
+        private CateBillFrm cb;
+        private ConSumFrm ca;
+        public void ShowEvent()
+        {
+            if (Myevet != null)
+                Myevet.Invoke();
+        }
         public void DefaultFrm_Load(object sender, System.EventArgs e)
         {
-            Maploop();
-        }
+            ShowEvent();
+            //Maploop();
 
+        }
         //生成房间餐桌
         private void Maploop()
         {
@@ -271,7 +297,9 @@ namespace MyCateringsTack
             frm.Mytb = tb;
             frm.ShowDialog();
             DefaultFrm_Load(null, null);
-
+            vf.ShowEvent();
+            ca.ShowEvenet();
+            cb.ShowEvent();
         }
 
         private void 餐桌状态ToolStripMenuItem_Click(object sender, System.EventArgs e)

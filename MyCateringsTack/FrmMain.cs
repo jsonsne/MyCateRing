@@ -18,13 +18,16 @@ namespace MyCateringsTack
             uiLabel3.Text = StaticCommons.UsInfo.UsCode;
             //节点和页面绑定
             Aside.TabControl = MainTabControl;
-
+            var vp = new VipFrm();
+            var cbi = new CateBillFrm();
+            var cda = new ConSumFrm();
+            var df = new DefaultFrm(vp,cbi,cda);
             //添加页面 
-            AddPage(new DefaultFrm(), 1001);//默认首页
-            AddPage(new CateBillFrm(), 10021);//账单查询
-            AddPage(new ConSumFrm(), 10022);//消费查询
-            AddPage(new VipFrm(), 1003);//vip管理
-            AddPage(new RoomTableFrm(), 1004);//房间餐桌管理
+            AddPage(df, 1001);//默认首页
+            AddPage(cbi, 10021);//账单查询
+            AddPage(cda, 10022);//消费查询
+            AddPage(vp, 1003);//vip管理
+            AddPage(new RoomTableFrm(df), 1004);//房间餐桌管理
             AddPage(new ProductFrm(), 1005);//商品管理
             AddPage(new SystemFrm(), 1006);//系统管理
 
@@ -56,6 +59,23 @@ namespace MyCateringsTack
                 this.Close();
             }
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbldate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
+        private void Aside_MenuItemClick(TreeNode node, NavMenuItem item, int pageIndex)
+        {
+            //var str = Aside.SelectedNode.Text;
+            //switch (str)
+            //{
+            //    case "餐饮首页":
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
     }
 }

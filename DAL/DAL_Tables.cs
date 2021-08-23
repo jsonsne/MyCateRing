@@ -154,6 +154,43 @@ where dt.id=@id
             return SqlHelp.Update(sql, new SqlParameter("state", state), new SqlParameter("id", id)) > 0;
         }
 
+        //获取餐桌具体商品消费
+        public List<TableConSum> GetConSums(string dateTime1 = null, string dateTime2 = null, string tname = null, string pname = null)
+        {
+            List<TableConSum> list = new List<TableConSum>();
+            string sql = @"
+select t.name tname, b.id bid,p.name pname,d.price,d.pCount,b.SumPrice,b.finishDate from CaterBill b
+join DiTable t
+on t.id=b.tableId
+join CaterDetail d
+on b.id=d.biiId
+join ProductInfo p
+on p.id=d.pId
+where b.isJiezhang=1
+";
+            if (!string.IsNullOrWhiteSpace(tname))
+                sql += $" and t.name like'%{tname}%'";
+            if (!string.IsNullOrWhiteSpace(pname))
+                sql += $" and p.name like'%{pname}%'";
+            if (!string.IsNullOrWhiteSpace(dateTime1))
+                sql += $" and b.finishDate between '{dateTime1}' and '{dateTime2}'";
+            var sdr = SqlHelp.Query(sql);
+            while (sdr.Read())
+            {
+                TableConSum tb = new TableConSum();
+                tb.Tname = sdr["tname"].ToString();
+                tb.Bid = sdr["bid"].ToString();
+                tb.Pname = sdr["pname"].ToString();
+                tb.Price = (double)sdr["price"];
+                tb.Pcount = (int)sdr["pcount"];
+                tb.SumPrice = (double)sdr["sumprice"];
+                tb.FinishDate = sdr["finishDate"].ToString();
+                list.Add(tb);
+
+            }
+
+            return list;
+        }
 
     }
 }

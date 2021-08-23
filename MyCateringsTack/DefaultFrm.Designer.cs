@@ -160,35 +160,35 @@ namespace MyCateringsTack
             // 当前状态ToolStripMenuItem
             // 
             this.当前状态ToolStripMenuItem.Name = "当前状态ToolStripMenuItem";
-            this.当前状态ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.当前状态ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.当前状态ToolStripMenuItem.Text = "当前状态";
             this.当前状态ToolStripMenuItem.Click += new System.EventHandler(this.当前状态ToolStripMenuItem_Click);
             // 
             // 改为可用ToolStripMenuItem
             // 
             this.改为可用ToolStripMenuItem.Name = "改为可用ToolStripMenuItem";
-            this.改为可用ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.改为可用ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.改为可用ToolStripMenuItem.Text = "改为可用";
             this.改为可用ToolStripMenuItem.Click += new System.EventHandler(this.改为可用ToolStripMenuItem_Click);
             // 
             // 改为占用ToolStripMenuItem
             // 
             this.改为占用ToolStripMenuItem.Name = "改为占用ToolStripMenuItem";
-            this.改为占用ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.改为占用ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.改为占用ToolStripMenuItem.Text = "改为占用";
             this.改为占用ToolStripMenuItem.Click += new System.EventHandler(this.改为占用ToolStripMenuItem_Click);
             // 
             // 改为停用ToolStripMenuItem
             // 
             this.改为停用ToolStripMenuItem.Name = "改为停用ToolStripMenuItem";
-            this.改为停用ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.改为停用ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.改为停用ToolStripMenuItem.Text = "改为停用";
             this.改为停用ToolStripMenuItem.Click += new System.EventHandler(this.改为停用ToolStripMenuItem_Click);
             // 
             // 改为预约ToolStripMenuItem
             // 
             this.改为预约ToolStripMenuItem.Name = "改为预约ToolStripMenuItem";
-            this.改为预约ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.改为预约ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.改为预约ToolStripMenuItem.Text = "改为预约";
             this.改为预约ToolStripMenuItem.Click += new System.EventHandler(this.改为预约ToolStripMenuItem_Click);
             // 

@@ -52,5 +52,12 @@ namespace BLL
         /// <returns></returns>
         public List<VipConSum> GetVipConSums(string identityStr=null) => ADL_Vip.GetVipConSums(identityStr);
 
+        /// <summary>
+        /// 获取会员消费详细
+        /// </summary>
+        /// <param name="bid"></param>
+        /// <returns></returns>
+        public List<VipDetails> GetVipDetails(string bid) => ADL_Vip.GetVipDetails(bid);
+
     }
 }
